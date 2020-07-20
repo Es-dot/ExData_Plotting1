@@ -7,7 +7,7 @@ household <- read_delim("household_power_consumption.txt",
     ";", escape_double = FALSE, trim_ws = TRUE)
 View(household)
 
-# subset dataset to the needed dates
+# set to the right date format and to the needed dates
 data1 <- subset(household, Date %in% c("1/2/2007","2/2/2007"))
 data1$Date <- as.Date(data1$Date, format="%d/%m/%Y")
 datetime <- paste(as.Date(data1$Date), data1$Time)
