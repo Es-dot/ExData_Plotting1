@@ -11,12 +11,12 @@ data1$Date <- as.Date(data1$Date, format="%d/%m/%Y")
 datetime <- paste(as.Date(data1$Date), data1$Time)
 data1$Datetime <- as.POSIXct(datetime)
 
-## Plot 
+## plot 
 with(data1, {
   plot(Global_active_power~Datetime, type="l",
        ylab="Global Active Power (kilowatts)", xlab="")
 })
 
-# Save PNG
+# save as PNG
 dev.copy(png, file="plot2.png", height=480, width=480)
 dev.off()
