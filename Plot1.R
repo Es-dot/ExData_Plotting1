@@ -9,6 +9,8 @@ household <- read_delim("Documents/R/Getting & cleaning data - Coursera/househol
 data1 <- subset(household, Date %in% c("1/2/2007","2/2/2007"))
 data1$Date <- as.Date(data1$Date, format="%d/%m/%Y")
 
-# create histogra 
+# create histogram 
 hist(data1$Global_active_power, main="Global Active Power", 
      xlab="Global Active Power (kilowatts)", ylab="Frequency", col="Red")
+png("plot1.png", width=480, height=480)
+dev.off()
