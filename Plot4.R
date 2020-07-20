@@ -2,8 +2,10 @@
 setwd("Documents/R/Getting & cleaning data - Coursera")
 
 # import dataset
-household <- read_delim("Documents/R/Getting & cleaning data - Coursera/household_power_consumption.txt", 
-                        +     ";", escape_double = FALSE, trim_ws = TRUE)
+library(readr)
+household <- read_delim("household_power_consumption.txt", 
+    ";", escape_double = FALSE, trim_ws = TRUE)
+View(household)
 
 # subset dataset to the needed dates
 data1 <- subset(household, Date %in% c("1/2/2007","2/2/2007"))
